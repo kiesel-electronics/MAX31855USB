@@ -1,0 +1,84 @@
+# !!! WARNING !!! AUTO-GENERATED FILE, PLEASE DO NOT MODIFY IT AND USE
+# https://docs.platformio.org/page/projectconf/section_env_build.html#build-flags
+#
+# If you need to override existing CMake configuration or add extra,
+# please create `CMakeListsUser.txt` in the root of project.
+# The `CMakeListsUser.txt` will not be overwritten by PlatformIO.
+
+
+
+set(CMAKE_CONFIGURATION_TYPES "Debug" CACHE STRING "Build Types reflect PlatformIO Environments" FORCE)
+
+set(CLION_SVD_FILE_PATH "$ENV{HOMEDRIVE}$ENV{HOMEPATH}/.platformio/platforms/atmelsam/misc/svd/ATSAMD21G18A.svd" CACHE FILEPATH "Peripheral Registers Definitions File" FORCE)
+
+SET(CMAKE_C_COMPILER "$ENV{HOMEDRIVE}$ENV{HOMEPATH}/.platformio/packages/toolchain-gccarmnoneeabi@1.70201.0/bin/arm-none-eabi-gcc.exe")
+SET(CMAKE_CXX_COMPILER "$ENV{HOMEDRIVE}$ENV{HOMEPATH}/.platformio/packages/toolchain-gccarmnoneeabi@1.70201.0/bin/arm-none-eabi-g++.exe")
+SET(CMAKE_CXX_FLAGS "-fno-rtti -fno-exceptions -std=gnu++11 -fno-threadsafe-statics -Os -ffunction-sections -fdata-sections -Wall -mcpu=cortex-m0plus -mthumb -nostdlib --param max-inline-insns-single=500")
+SET(CMAKE_C_FLAGS "-std=gnu11 -Os -ffunction-sections -fdata-sections -Wall -mcpu=cortex-m0plus -mthumb -nostdlib --param max-inline-insns-single=500")
+
+SET(CMAKE_C_STANDARD 11)
+set(CMAKE_CXX_STANDARD 11)
+
+if (CMAKE_BUILD_TYPE MATCHES "Debug")
+    add_definitions(-DPLATFORMIO=50203)
+    add_definitions(-DARDUINO_SAMD_ZERO)
+    add_definitions(-D__SAMD21G18A__)
+    add_definitions(-DARDUINO=10805)
+    add_definitions(-DF_CPU=48000000L)
+    add_definitions(-DUSBCON)
+    add_definitions(-DUSB_VID=0x2341)
+    add_definitions(-DUSB_PID=0x804D)
+    add_definitions(-DUSB_PRODUCT=\"Arduino Zero\")
+    add_definitions(-DUSB_MANUFACTURER=\"Arduino\")
+    add_definitions(-DARDUINO_ARCH_SAMD)
+
+    include_directories("${CMAKE_CURRENT_LIST_DIR}/include")
+    include_directories("${CMAKE_CURRENT_LIST_DIR}/src")
+    include_directories("${CMAKE_CURRENT_LIST_DIR}/lib/SDConfig")
+    include_directories("${CMAKE_CURRENT_LIST_DIR}/.pio/libdeps/Debug/Adafruit MCP9808 Library")
+    include_directories("${CMAKE_CURRENT_LIST_DIR}/.pio/libdeps/Debug/InputDebounce/src")
+    include_directories("${CMAKE_CURRENT_LIST_DIR}/.pio/libdeps/Debug/SD/src")
+    include_directories("${CMAKE_CURRENT_LIST_DIR}/.pio/libdeps/Debug/Vrekrer SCPI parser/src")
+    include_directories("${CMAKE_CURRENT_LIST_DIR}/.pio/libdeps/Debug/Adafruit MAX31855 library")
+    include_directories("${CMAKE_CURRENT_LIST_DIR}/.pio/libdeps/Debug/Adafruit BusIO")
+    include_directories("$ENV{HOMEDRIVE}$ENV{HOMEPATH}/.platformio/packages/framework-arduino-samd/libraries/Wire")
+    include_directories("$ENV{HOMEDRIVE}$ENV{HOMEPATH}/.platformio/packages/framework-arduino-samd/libraries/SPI")
+    include_directories("${CMAKE_CURRENT_LIST_DIR}/.pio/libdeps/Debug/Adafruit Unified Sensor")
+    include_directories("$ENV{HOMEDRIVE}$ENV{HOMEPATH}/.platformio/packages/framework-arduino-samd/cores/arduino/api/deprecated")
+    include_directories("$ENV{HOMEDRIVE}$ENV{HOMEPATH}/.platformio/packages/framework-arduino-samd/cores/arduino/api/deprecated-avr-comp")
+    include_directories("$ENV{HOMEDRIVE}$ENV{HOMEPATH}/.platformio/packages/framework-cmsis@1.40500.0/CMSIS/Include")
+    include_directories("$ENV{HOMEDRIVE}$ENV{HOMEPATH}/.platformio/packages/framework-cmsis-atmel/CMSIS/Device/ATMEL")
+    include_directories("$ENV{HOMEDRIVE}$ENV{HOMEPATH}/.platformio/packages/framework-arduino-samd/cores/arduino")
+    include_directories("$ENV{HOMEDRIVE}$ENV{HOMEPATH}/.platformio/packages/framework-arduino-samd/variants/arduino_zero")
+    include_directories("${CMAKE_CURRENT_LIST_DIR}/.pio/libdeps/Debug/Adafruit GFX Library")
+    include_directories("${CMAKE_CURRENT_LIST_DIR}/.pio/libdeps/Debug/Adafruit SH110X")
+    include_directories("${CMAKE_CURRENT_LIST_DIR}/.pio/libdeps/Debug/LiquidCrystal")
+    include_directories("$ENV{HOMEDRIVE}$ENV{HOMEPATH}/.platformio/packages/framework-arduino-samd/libraries/HID")
+    include_directories("$ENV{HOMEDRIVE}$ENV{HOMEPATH}/.platformio/packages/framework-arduino-samd/libraries/I2S/src")
+    include_directories("$ENV{HOMEDRIVE}$ENV{HOMEPATH}/.platformio/packages/framework-arduino-samd/libraries/SAMD_AnalogCorrection/src")
+    include_directories("$ENV{HOMEDRIVE}$ENV{HOMEPATH}/.platformio/packages/framework-arduino-samd/libraries/SAMD_BootloaderUpdater/src")
+    include_directories("$ENV{HOMEDRIVE}$ENV{HOMEPATH}/.platformio/packages/framework-arduino-samd/libraries/SBU/src")
+    include_directories("$ENV{HOMEDRIVE}$ENV{HOMEPATH}/.platformio/packages/framework-arduino-samd/libraries/SDU/src")
+    include_directories("$ENV{HOMEDRIVE}$ENV{HOMEPATH}/.platformio/packages/framework-arduino-samd/libraries/SFU/src")
+    include_directories("$ENV{HOMEDRIVE}$ENV{HOMEPATH}/.platformio/packages/framework-arduino-samd/libraries/SNU/src")
+    include_directories("$ENV{HOMEDRIVE}$ENV{HOMEPATH}/.platformio/packages/framework-arduino-samd/libraries/SSU/src")
+    include_directories("$ENV{HOMEDRIVE}$ENV{HOMEPATH}/.platformio/packages/framework-arduino-samd/libraries/USBHost/src")
+    include_directories("$ENV{HOMEDRIVE}$ENV{HOMEPATH}/.platformio/packages/toolchain-gccarmnoneeabi@1.70201.0/arm-none-eabi/include/c++/7.2.1")
+    include_directories("$ENV{HOMEDRIVE}$ENV{HOMEPATH}/.platformio/packages/toolchain-gccarmnoneeabi@1.70201.0/arm-none-eabi/include/c++/7.2.1/arm-none-eabi")
+    include_directories("$ENV{HOMEDRIVE}$ENV{HOMEPATH}/.platformio/packages/toolchain-gccarmnoneeabi@1.70201.0/lib/gcc/arm-none-eabi/7.2.1/include")
+    include_directories("$ENV{HOMEDRIVE}$ENV{HOMEPATH}/.platformio/packages/toolchain-gccarmnoneeabi@1.70201.0/lib/gcc/arm-none-eabi/7.2.1/include-fixed")
+    include_directories("$ENV{HOMEDRIVE}$ENV{HOMEPATH}/.platformio/packages/toolchain-gccarmnoneeabi@1.70201.0/arm-none-eabi/include")
+
+    FILE(GLOB_RECURSE EXTRA_LIB_SOURCES
+        ${CMAKE_CURRENT_LIST_DIR}/.pio/libdeps/Debug/*.*
+    )
+endif()
+
+
+FILE(GLOB_RECURSE SRC_LIST
+    ${CMAKE_CURRENT_LIST_DIR}/src/*.*
+    ${CMAKE_CURRENT_LIST_DIR}/lib/*.*
+    ${CMAKE_CURRENT_LIST_DIR}/test/*.*
+)
+
+list(APPEND SRC_LIST ${EXTRA_LIB_SOURCES})

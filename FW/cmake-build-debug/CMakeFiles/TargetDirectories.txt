@@ -1,0 +1,5 @@
+E:/repos/boards/MAX31855USB/FW/cmake-build-debug/CMakeFiles/Production.dir
+E:/repos/boards/MAX31855USB/FW/cmake-build-debug/CMakeFiles/edit_cache.dir
+E:/repos/boards/MAX31855USB/FW/cmake-build-debug/CMakeFiles/Debug.dir
+E:/repos/boards/MAX31855USB/FW/cmake-build-debug/CMakeFiles/Z_DUMMY_TARGET.dir
+E:/repos/boards/MAX31855USB/FW/cmake-build-debug/CMakeFiles/rebuild_cache.dir

@@ -1,0 +1,18 @@
+"C:\Program Files\JetBrains\CLion 2021.1.3\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -DCMAKE_DEPENDS_USE_COMPILER=FALSE -G "CodeBlocks - MinGW Makefiles" E:\repos\boards\MAX31855USB\FW
+-- The C compiler identification is GNU 10.3.0
+-- The CXX compiler identification is GNU 10.3.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - failed
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - failed
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Configuring done
+-- Generating done
+-- Build files have been written to: E:/repos/boards/MAX31855USB/FW/cmake-build-debug
+
+Problems were encountered while collecting compiler information:
+	arm-none-eabi-gcc.exe: error: Zero -std=gnu11: No such file or directory
+	arm-none-eabi-g++.exe: error: Zero -std=gnu++11: No such file or directory
