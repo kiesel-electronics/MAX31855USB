@@ -2,11 +2,13 @@
 
 This is the code repository for the 4 channel MAX31855 USB K-Type Thermocouple Sensor Board.
 It contains the firmware code for the microcontroller as well as the python examples for reading the sensors.
+The Board can either be used for data acquisition via USB using a virtual serial port or as a standalone data logger recording 
+data onto a micro SD card.  
+The Board can be extended with up to 8 MCP9808 precision temperature sensors.
 
 ![MAX31855USB](./img/1.jpg) 
 ![MAX31855USB](./img/2.jpg)
-The Board can either be used for data acquisition via USB using a virtual serial port or as a standalone data logger recording 
-data onto a micro SD card.  
+
 
 # Data logging
 Standalone data logging requires a micro USB card formatted with FAT16 or FAT32.  
@@ -15,7 +17,7 @@ A template can be found in this repository.
 
 There are three parameters in the config file.
 * csv_delimiter: defines the character separating the entries
-* decimal_separator: usually . or ,
+* decimal_separator: usually `.` or `,`
 * logging_interval: logging interval in seconds
 
 Write the config file to the root folder of the SD card. Insert the SD cart into the slot of the board.  
