@@ -7,7 +7,9 @@ The Board can be extended via the available I2C port. Currently, the software su
 The schematic of the board is available here: [MAX31855USB_Schematic](./MAX31855USB_Schematic.pdf)
 
 The Board and the precision temperature sensors are available in my Tindie store:
+
 [4CH K-Type Thermocouple USB IF and data logger](https://www.tindie.com/products/25519/)
+
 [MCP9808 I2C precision temperature sensor](https://www.tindie.com/products/25494/)
 
 ![MAX31855USB](./img/1.jpg) 
