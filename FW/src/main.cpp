@@ -16,7 +16,7 @@ void StartButtonPressedCbk(uint8_t pinIn);
 
 static InputDebounce buttonStart;
 
-SPIClass SPI2 (&sercom1,  PIN_SPI2_MISO,  PIN_SPI2_SCK,  PIN_SPI2_MOSI,  PAD_SPI2_TX,  PAD_SPI2_RX);
+SPIClassSAMD SPI2 (&sercom1,  PIN_SPI2_MISO,  PIN_SPI2_SCK,  PIN_SPI2_MOSI,  PAD_SPI2_TX,  PAD_SPI2_RX);
 
 // Initialize the Thermocouple
 Adafruit_MAX31855 tc_1(nCS_1, &SPI2);

@@ -14,6 +14,7 @@ unsigned int dataLogTimer;
 int logging_interval_cnt = 0;
 int logging_interval = 1;
 bool logging_active;
+int ledTimer = 0;
 
 extern double temperature_ch_1;
 extern double temperature_ch_2;
@@ -155,6 +156,7 @@ void SdLog1000msTask() {
         // sd write successful
         // switch LED on (will be switched off in the next 100ms cycle to create a short blink)
         digitalWrite(LED, LOW);
+        ledTimer  = 1;
       }
       logging_interval_cnt = 0;
     }
@@ -166,6 +168,11 @@ void SdLog1000msTask() {
 
 
 void SdLog100msTask() {
-  // switch LED off
-  digitalWrite(LED, HIGH);
+  if (ledTimer == 0){
+    // switch LED off
+    digitalWrite(LED, HIGH);
+  } else {
+    ledTimer--;
+  }
+
 }
