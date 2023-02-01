@@ -43,7 +43,7 @@ A python library for data acquisition and an example of how to read the sensors 
 [<img src="https://d2ss6ovg47m0r5.cloudfront.net/badges/tindie-smalls.png">](https://www.tindie.com/stores/kieselelectonic/?ref=offsite_badges&utm_source=sellers_KieselElectonic&utm_medium=badges&utm_campaign=badge_small)
 
 
-![MAX31855USB](./img/1.jpg) 
-![MAX31855USB](./img/2.jpg)
 ![MAX31855USBv2](./img/3.jpg) 
 ![MAX31855USBv2](./img/4.jpg)
+![MAX31855USB](./img/1.jpg) 
+![MAX31855USB](./img/2.jpg)
