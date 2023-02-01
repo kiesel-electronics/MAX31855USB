@@ -9,14 +9,11 @@ The schematic of the board is available here: [MAX31855USB_Schematic](./MAX31855
 The Board and the precision temperature sensors are available in my Tindie store:
 
 [4CH K-Type Thermocouple USB IF and data logger](https://www.tindie.com/products/25519/)
+
 [4CH K-Type Thermocouple USB IF and data logger Version 2](https://www.tindie.com/products/29220/)
 
 [MCP9808 I2C precision temperature sensor](https://www.tindie.com/products/25494/)
 
-![MAX31855USB](./img/1.jpg) 
-![MAX31855USB](./img/2.jpg)
-![MAX31855USBv2](./img/3.jpg) 
-![MAX31855USBv2](./img/4.jpg)
 
 # Data logging
 Standalone data logging requires a micro USB card formatted with FAT16 or FAT32.  
@@ -45,3 +42,8 @@ A python library for data acquisition and an example of how to read the sensors 
 
 [<img src="https://d2ss6ovg47m0r5.cloudfront.net/badges/tindie-smalls.png">](https://www.tindie.com/stores/kieselelectonic/?ref=offsite_badges&utm_source=sellers_KieselElectonic&utm_medium=badges&utm_campaign=badge_small)
 
+
+![MAX31855USB](./img/1.jpg) 
+![MAX31855USB](./img/2.jpg)
+![MAX31855USBv2](./img/3.jpg) 
+![MAX31855USBv2](./img/4.jpg)
