@@ -5,6 +5,8 @@
 #ifndef MAX31855USB_CONFIG_H
 #define MAX31855USB_CONFIG_H
 
+#define DISPLAY_SUPPORT
+
 // digital IO pins.
 #define nCS_1   5   //PA15
 #define nCS_2   2   //PA14
@@ -35,7 +37,7 @@
 #define DBG_EN
 
 #ifdef DBG_EN
-#define DBG_PRINT(x)   SerialUSB.println(x);
+#define DBG_PRINT(x)   SerialUSB.println(x)
 #else
 #define DBG_PRINT(x)
 #endif

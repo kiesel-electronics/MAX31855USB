@@ -24,20 +24,18 @@ extern double temperature_ch_4;
 
 void incFileNum() { // generate next file name:
   String s = "dat" + String(++fileNum) + ".csv";
-  s.toCharArray(fileName,20);
+  s.toCharArray(fileName, 20);
 }
 
 
-void SdLogBegin() {
+bool SdLogBegin() {
   logging_active = false;
-}
 
-
-bool SdLogInit() {
   if (!SD.begin(SD_CARD_nCS)) {
+    sd_card_detected = false;
     return false;
   }
-  sd_card_detected  = true;
+  sd_card_detected = true;
   // try reading the config file
   int maxLineLength = 127;
   SDConfig cfg;
@@ -61,14 +59,19 @@ bool SdLogInit() {
     }
   }
   cfg.end();
-  DBG_PRINT("delimiter: " + String(csv_delimiter))
-  DBG_PRINT("separator: " + String(decimal_separator))
-  DBG_PRINT("interval: " + String(logging_interval))
+  DBG_PRINT("delimiter: " + String(csv_delimiter));
+  DBG_PRINT("separator: " + String(decimal_separator));
+  DBG_PRINT("interval: " + String(logging_interval));
+  return true;
+}
+
+bool SdLogInit() {
+
   // search for next filename
   fileNum = 0;
   incFileNum();
   while (SD.exists(fileName)) incFileNum();
-  DBG_PRINT("new file name: " + String(fileName))
+  DBG_PRINT("new file name: " + String(fileName));
   dataLogTimer = 0;
   // open new file and generate first line
   File dataFile = SD.open(fileName, FILE_WRITE);
@@ -124,25 +127,33 @@ bool SdLogTemp() {
 }
 
 
-void StartButtonPressedCbk(uint8_t pinIn){
+void StartButtonPressedCbk(uint8_t pinIn) {
   logging_active = !logging_active;
-  if(logging_active) {
-    DBG_PRINT("Start Logging!")
+  if (logging_active) {
+    DBG_PRINT("Start Logging!");
     // detect SD Card
-    sd_card_detected  = false;
-    if (digitalRead(SD_CARD_DET) == LOW){
+    if (digitalRead(SD_CARD_DET) == LOW) {
       // SD card detected!
-      DBG_PRINT("SD card detected!")
-      if(!SdLogInit()){
-        DBG_PRINT("SD init failed!")
+      DBG_PRINT("SD card detected!");
+      sd_card_detected = true;
+      if (!SdLogInit()) {
+        DBG_PRINT("SD init failed!");
         logging_active = false;
       }
+      if (SdLogTemp()) {
+        // sd write successful
+        // switch LED on (will be switched off in the next 100ms cycle to create a short blink)
+        digitalWrite(LED, LOW);
+        ledTimer = 1;
+      }
+      logging_interval_cnt = 0;
     } else {
-      DBG_PRINT("No SD card detected!")
+      DBG_PRINT("No SD card detected!");
       logging_active = false;
+      sd_card_detected = false;
     }
   } else {
-    DBG_PRINT("Stop Logging!")
+    DBG_PRINT("Stop Logging!");
   }
 }
 
@@ -151,12 +162,12 @@ void SdLog1000msTask() {
   if (logging_active) {
     logging_interval_cnt++;
     dataLogTimer++;
-    if (logging_interval_cnt >= logging_interval){
-      if(SdLogTemp()) {
+    if (logging_interval_cnt >= logging_interval) {
+      if (SdLogTemp()) {
         // sd write successful
         // switch LED on (will be switched off in the next 100ms cycle to create a short blink)
         digitalWrite(LED, LOW);
-        ledTimer  = 1;
+        ledTimer = 1;
       }
       logging_interval_cnt = 0;
     }
@@ -168,11 +179,32 @@ void SdLog1000msTask() {
 
 
 void SdLog100msTask() {
-  if (ledTimer == 0){
+  if (ledTimer == 0) {
     // switch LED off
     digitalWrite(LED, HIGH);
   } else {
     ledTimer--;
   }
 
+}
+
+
+bool SdLogWriteConfig() {
+  SD.remove(configFile);
+  File cfgFile = SD.open(configFile, FILE_WRITE);
+  if (cfgFile) {
+    cfgFile.print("csv_delimiter=");
+    cfgFile.println(csv_delimiter);
+
+    cfgFile.print("decimal_separator=");
+    cfgFile.println(decimal_separator);
+
+    cfgFile.print("logging_interval=");
+    cfgFile.println(logging_interval);
+
+    cfgFile.close();
+    return true;
+  } else {
+    return false;
+  }
 }
