@@ -7,7 +7,7 @@ print("Installed pymeasure version: " + pymeasure.__version__)
 print("Available resources:")
 print(list_resources())
 
-tc = MAX31855USB('ASRL13')
+tc = MAX31855USB('ASRL32')
 print("Device id: " + tc.id())
 
 for i in range(500):

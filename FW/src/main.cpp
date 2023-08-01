@@ -92,7 +92,7 @@ result start_logging(eventMask e, navNode& nav, prompt& item) {
   if (!logging_active) {
     StartButtonPressedCbk(0);
   }
-  return proceed;
+  return quit;
 }
 
 result stop_logging(eventMask e, navNode& nav, prompt& item) {
@@ -100,7 +100,7 @@ result stop_logging(eventMask e, navNode& nav, prompt& item) {
     // logging running
     StartButtonPressedCbk(0);
   }
-  return proceed;
+  return quit;
 }
 
 result saveConfig(eventMask e, navNode& nav, prompt& item) {

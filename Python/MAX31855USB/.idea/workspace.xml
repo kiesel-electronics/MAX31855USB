@@ -5,6 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4f7f6aa7-25db-4e99-b4f5-27f62f4c5cf8" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../../FW/src/Logging.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../FW/src/Logging.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../FW/src/Logging.h" beforeDir="false" afterPath="$PROJECT_DIR$/../../FW/src/Logging.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../FW/src/config.h" beforeDir="false" afterPath="$PROJECT_DIR$/../../FW/src/config.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../FW/src/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../FW/src/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -33,6 +38,7 @@
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -45,7 +51,12 @@
       <option name="presentableId" value="Default" />
       <updated>1674852739613</updated>
       <workItem from="1674852740743" duration="4256000" />
-      <workItem from="1678540769278" duration="763000" />
+      <workItem from="1678540769278" duration="1611000" />
+      <workItem from="1678646574650" duration="26000" />
+      <workItem from="1678646612990" duration="204000" />
+      <workItem from="1689467967927" duration="5534000" />
+      <workItem from="1690745626192" duration="37000" />
+      <workItem from="1690890107195" duration="1791000" />
     </task>
     <servers />
   </component>
@@ -53,6 +64,6 @@
     <option name="version" value="3" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/MAX31855USB$main.coverage" NAME="main Coverage Results" MODIFIED="1678540992727" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/MAX31855USB$main.coverage" NAME="main Coverage Results" MODIFIED="1690929962345" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
