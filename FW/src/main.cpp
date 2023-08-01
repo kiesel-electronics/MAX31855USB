@@ -7,6 +7,12 @@
 #include "InputDebounce.h"
 #include "Logging.h"
 
+void StartButtonPressedCbk(uint8_t pinIn);
+void Read_temps();
+void Identify(SCPI_C commands, SCPI_P parameters, Stream& interface);
+void GetTemperature(SCPI_C commands, SCPI_P parameters, Stream& interface);
+void GetTemperatureIntern(SCPI_C commands, SCPI_P parameters, Stream& interface);
+
 #ifdef DISPLAY_SUPPORT
 #include <LiquidCrystal_PCF8574.h>
 #include <menu.h>               //menu macros and objects
@@ -32,6 +38,8 @@ const int LCD_COLS = 16;
 const int LCD_ROWS = 2;
 
 result idle(menuOut& o, idleEvent e);
+result start_logging(eventMask e, navNode& nav, prompt& item);
+result stop_logging(eventMask e, navNode& nav, prompt& item);
 result saveConfig(eventMask e, navNode& nav, prompt& item);
 void LcdPrintTemperatures(void);
 
@@ -54,6 +62,8 @@ CHOOSE(sd_card_detected, sdMenu, "SDcard", doNothing, noEvent, noStyle,
        VALUE("FALSE", false, doNothing, noEvent));
 
 MENU(mainMenu, "Main menu", doNothing, noEvent, wrapStyle,
+     OP("Start Logging", start_logging, enterEvent),
+     OP("Stop Logging", stop_logging, enterEvent),
      FIELD(logging_interval, "interval", "s", 1, 300, 10, 1, doNothing, enterEvent, noStyle),
      SUBMENU(csvDelimiterMenu),
      SUBMENU(separatorMenu),
@@ -78,6 +88,21 @@ result idle(menuOut& o, idleEvent e) {
   return proceed;
 }
 
+result start_logging(eventMask e, navNode& nav, prompt& item) {
+  if (!logging_active) {
+    StartButtonPressedCbk(0);
+  }
+  return proceed;
+}
+
+result stop_logging(eventMask e, navNode& nav, prompt& item) {
+  if (logging_active) {
+    // logging running
+    StartButtonPressedCbk(0);
+  }
+  return proceed;
+}
+
 result saveConfig(eventMask e, navNode& nav, prompt& item) {
   lcd.clear();
   lcd.setCursor(0, 0);
@@ -91,12 +116,6 @@ result saveConfig(eventMask e, navNode& nav, prompt& item) {
   return proceed;
 }
 #endif
-
-void Read_temps();
-void Identify(SCPI_C commands, SCPI_P parameters, Stream& interface);
-void GetTemperature(SCPI_C commands, SCPI_P parameters, Stream& interface);
-void GetTemperatureIntern(SCPI_C commands, SCPI_P parameters, Stream& interface);
-void StartButtonPressedCbk(uint8_t pinIn);
 
 static InputDebounce buttonStart;
 

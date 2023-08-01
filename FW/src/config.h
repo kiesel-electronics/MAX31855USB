@@ -34,7 +34,7 @@
 
 #define BUTTON_DEBOUNCE_DELAY   20   // [ms]
 
-#define DBG_EN
+//#define DBG_EN
 
 #ifdef DBG_EN
 #define DBG_PRINT(x)   SerialUSB.println(x)

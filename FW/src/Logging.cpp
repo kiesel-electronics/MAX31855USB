@@ -144,6 +144,7 @@ void StartButtonPressedCbk(uint8_t pinIn) {
         // sd write successful
         // switch LED on (will be switched off in the next 100ms cycle to create a short blink)
         digitalWrite(LED, LOW);
+        enc.setRGB(0, 32, 0);
         ledTimer = 1;
       }
       logging_interval_cnt = 0;
@@ -167,6 +168,7 @@ void SdLog1000msTask() {
         // sd write successful
         // switch LED on (will be switched off in the next 100ms cycle to create a short blink)
         digitalWrite(LED, LOW);
+        enc.setRGB(0, 32, 0);
         ledTimer = 1;
       }
       logging_interval_cnt = 0;
@@ -182,6 +184,7 @@ void SdLog100msTask() {
   if (ledTimer == 0) {
     // switch LED off
     digitalWrite(LED, HIGH);
+    enc.setRGB(0, 0, 0);
   } else {
     ledTimer--;
   }
