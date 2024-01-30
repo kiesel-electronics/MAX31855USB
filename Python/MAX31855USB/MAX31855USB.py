@@ -13,8 +13,6 @@ class MAX31855USB:
         self.instrument.read_termination = '\n'
         self.instrument.write_termination = '\n'
 
-
-
     def id(self):
         return self.instrument.query('*IDN?')
 

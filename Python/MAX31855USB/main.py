@@ -7,8 +7,10 @@ print("Installed pymeasure version: " + pymeasure.__version__)
 print("Available resources:")
 print(list_resources())
 
-tc = MAX31855USB('ASRL32')
+tc = MAX31855USB('ASRL3')
 print("Device id: " + tc.id())
+
+print(type(tc.get_temperature()[0]))
 
 for i in range(500):
     print("Measured temperature (°C):          " + str(tc.get_temperature()))
